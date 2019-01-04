@@ -9,7 +9,7 @@ from setuptools import setup
 setup(
     name='uric',
     version='1.0.0',
-    url='https://github.com/dongweiming/sanic-mako',
+    url='https://github.com/csrftoken/uric.git',
     license='Apache 2',
     author='LiuZhiChao',
     author_email='404042726@qq.com',

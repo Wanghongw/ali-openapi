@@ -9,7 +9,7 @@ from setuptools import find_packages
 
 setup(
     name='uric',
-    version='1.2.0',
+    version='1.2.1',
     url='https://github.com/csrftoken/uric.git',
     license='Apache 2',
     author='LiuZhiChao',

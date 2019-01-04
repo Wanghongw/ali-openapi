@@ -8,17 +8,16 @@ from setuptools import setup
 
 setup(
     name='uric',
-    version='1.0.0',
+    version='1.1.4',
     url='https://github.com/csrftoken/uric.git',
     license='Apache 2',
     author='LiuZhiChao',
     author_email='404042726@qq.com',
     description='ali and wx sdk for django.',
     long_description=__doc__,
-    py_modules=['uric'],
     zip_safe=False,
-    platforms='any',
-    install_requires=['requests', 'django', ],
+    platforms=['all', ],
+    install_requires=['requests', ],
     classifiers=[
         'Framework :: AsyncIO',
         'Environment :: Web Environment',

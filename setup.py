@@ -4,11 +4,12 @@ django-uric
 """
 
 from setuptools import setup
+from setuptools import find_packages
 
 
 setup(
     name='uric',
-    version='1.1.4',
+    version='1.2.0',
     url='https://github.com/csrftoken/uric.git',
     license='Apache 2',
     author='LiuZhiChao',
@@ -16,8 +17,9 @@ setup(
     description='ali and wx sdk for django.',
     long_description=__doc__,
     zip_safe=False,
+    packages=find_packages(),
     platforms=['all', ],
-    install_requires=['requests', ],
+    install_requires=['requests', 'pycryptodome', ],
     classifiers=[
         'Framework :: AsyncIO',
         'Environment :: Web Environment',

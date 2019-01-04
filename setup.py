@@ -15,10 +15,10 @@ setup(
     author_email='404042726@qq.com',
     description='ali and wx sdk for django.',
     long_description=__doc__,
-    py_modules=['uric-django'],
+    py_modules=['uric'],
     zip_safe=False,
     platforms='any',
-    install_requires=['requests', 'django', 'xml'],
+    install_requires=['requests', 'django', ],
     classifiers=[
         'Framework :: AsyncIO',
         'Environment :: Web Environment',

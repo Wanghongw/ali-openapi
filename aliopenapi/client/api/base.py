@@ -1,15 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-# Date: 2018/5/17
+# Date: 2020-03-21
 
 
-class BaseWeChatPayAPI(object):
-
-    """
-
-    微信支付API基类
-
-    """
+class BaseAliClientAPI(object):
 
     def __init__(self, client=None):
         self._client = client
@@ -24,14 +18,9 @@ class BaseWeChatPayAPI(object):
             kwargs['api_base_url'] = getattr(self, "API_BASE_URL")
         return self._client.post(url, **kwargs)
 
+    def _generate_url(self, method, *args, **kwargs):
+        return self._client.generate_url(method, *args, **kwargs)
+
     @property
     def app_id(self):
         return self._client.app_id
-
-    @property
-    def mch_id(self):
-        return self._client.mch_id
-
-    @property
-    def sub_mch_id(self):
-        return self._client.sub_mch_id

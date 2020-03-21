@@ -1,38 +1,32 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-# Date: 21/01/2018
+# Date: 2019/1/4
 
 """
-    微信相关服务实现
+    阿里巴巴旗下相关服务
+
+        蚂蚁金服(支付宝)
+
+        阿里云
+
+            因阿里云权限访问控制, 可能每种服务都会映射到一个访问key和秘钥(当然也可以用最大权限)
+
 """
 
 import logging
 import requests
 
-
 logger = logging.getLogger(__name__)
 
 
-class BaseWeChat(object):
-
-    """
-
-    `微信公众号开发`
-
-    `微信商户开发`
-
-    `微信开发平台`
-
-    """
+class BaseAli(object):
 
     API_BASE_URL = ""
 
     _http = requests.session()
 
-    def __init__(self, app_id, timeout=None, session=None, auto_retry=True):
-        self.app_id = app_id
+    def __init__(self, timeout, auto_retry=False):
         self.timeout = timeout
-        self.session = session
         self.auto_retry = auto_retry
 
     def request(self, *args, **kwargs):
@@ -40,14 +34,14 @@ class BaseWeChat(object):
 
     def get(self, url, **kwargs):
         return self.request(
-            method='get',
+            method="get",
             url_or_endpoint=url,
             **kwargs
         )
 
     def post(self, url, **kwargs):
         return self.request(
-            method='post',
+            method="post",
             url_or_endpoint=url,
             **kwargs
         )

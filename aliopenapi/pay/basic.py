@@ -5,11 +5,10 @@
 import json
 import inspect
 
+from datetime import datetime
 from urllib.parse import quote_plus
 
 from Crypto.PublicKey import RSA
-
-from django.utils.timezone import now
 
 from .. import BaseAli
 from ..tools import calculate_signature
@@ -37,7 +36,7 @@ class AliPay(BaseAli):
     order = api.AliOrder()
 
     def __init__(
-        self, app_id, app_private_key_path, ali_public_key_path,
+        self, app_id, private_key_path, public_key_path,
         notify_url, return_url, debug,
     ):
 
@@ -55,11 +54,11 @@ class AliPay(BaseAli):
         self.return_url = return_url
 
         # 加载应用的私钥
-        with open(app_private_key_path) as fp:
+        with open(private_key_path) as fp:
             self.app_private_key = RSA.importKey(fp.read())
 
         # 加载支付宝公钥
-        with open(ali_public_key_path) as fp:
+        with open(public_key_path) as fp:
             self.ali_public_key = RSA.importKey(fp.read())
 
     def __new__(cls, *args, **kwargs):
@@ -142,7 +141,7 @@ class AliPay(BaseAli):
             "method": method,
             "charset": "utf-8",
             "sign_type": "RSA2",
-            "timestamp": now().strftime("%Y-%m-%d %H:%M:%S"),
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "version": "1.0",
             "biz_content": biz_content
         }

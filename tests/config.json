@@ -1,0 +1,9 @@
+{
+  "PAY": {
+    "APP_ID": "2016081500252288",
+    "PUBLIC_KEY_PATH": "/Users/xxx/DjangoProjects/log/alipay_public_test_2048",
+    "PRIVATE_KEY_PATH": "/Users/xxx/DjangoProjects/log/app_private_test_2048",
+    "NOTIFY_URL": "http://public-ip.com/notify_url/",
+    "RETURN_URL": "http://public-ip.com/return_url/"
+  }
+}

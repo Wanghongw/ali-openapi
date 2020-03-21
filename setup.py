@@ -8,13 +8,13 @@ from setuptools import find_packages
 
 
 setup(
-    name='uric',
-    version='1.2.1',
-    url='https://github.com/csrftoken/uric.git',
+    name='ali-openapi',
+    version='0.0.1',
+    url='https://github.com/csrftoken/ali-openapi.git',
     license='Apache 2',
-    author='LiuZhiChao',
+    author='liuzhichao',
     author_email='404042726@qq.com',
-    description='ali and wx sdk for django.',
+    description='ali-openapi',
     long_description=__doc__,
     zip_safe=False,
     packages=find_packages(),
